@@ -1,0 +1,24 @@
+<wxs src="/utils/format.wxs" module="format"></wxs>
+<sub-header isShow="{{false}}" title="{{musicList.cat}}"></sub-header>
+<view class="music-menu-item">
+  <view 
+    class="music-item"
+    wx:for="{{musicList.playlists}}"
+    wx:key="id"
+    bindtap="handleToMusicList"
+    data-item="{{item}}"
+    data-index="{{index}}"
+    >
+      <view class="item-top">
+        <image 
+          class="music-item-image"
+          src="{{item.coverImgUrl}}"
+          mode="widthFix"
+        ></image>
+        <text>{{format.formatPlayCount(item.playCount)}}</text>
+      </view>
+      <view class="item-bottom">
+        {{item.name}}
+      </view>
+  </view>
+</view>

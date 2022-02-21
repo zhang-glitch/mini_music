@@ -1,0 +1,12 @@
+.page-video {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.video-item-wrapper {
+  width: 48%;
+}
+

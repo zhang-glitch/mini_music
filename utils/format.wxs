@@ -1,0 +1,48 @@
+function formatPlayCount(params) {
+  var num = parseInt(params);
+  if(num > 100000000) {
+    return (num / 100000000).toFixed(2) + "亿";
+  }else if(num > 10000) {
+    return (num / 10000).toFixed(2) + "万";
+  }else {
+    return ""
+  }
+}
+
+function formatPlayDuration(duration) {
+  // 这样实现有问题。
+  // // 秒
+  // var second = Math.floor(parseInt(duration) / 1000);
+  // // 分钟数组
+  // var moute = ((second / 60) + "").split(".");
+  // if(moute[0].length === 1) {
+  //   moute[0] = "0" + moute[0]
+  // }
+
+  // if(!moute[1]) {
+  //   moute[1] = "00"
+  // }else if(moute[1].length === 1) {
+  //   moute[1] = moute[1] + "0"
+  // }else {
+  //   moute[1] = moute[1].slice(0, 2)
+  // }
+  // return moute[0] + ":" + moute[1]
+
+
+  var second = Math.floor(parseInt(duration) / 1000);
+  var minute = Math.floor(second / 60);
+  var seconds = Math.floor(second % 60);
+  if((minute + "").length === 1) {
+    minute = "0" + minute
+  }
+  if((seconds + "").length === 1) {
+    seconds = "0" + seconds 
+  }
+  return minute + ":" + seconds
+}
+
+
+module.exports = {
+  formatPlayCount: formatPlayCount,
+  formatPlayDuration: formatPlayDuration
+}

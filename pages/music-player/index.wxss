@@ -1,0 +1,179 @@
+/* pages/music-player/index.wxss */
+/* <!-- 页面背景 --> */
+.music-player .bg-image , .music-player .bg-cover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.bg-cover {
+  background: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(18rpx);
+  z-index: -1;
+}
+
+/* <!-- 页面导航 --> */
+.music-player-name-author {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.music-player-name-author .song-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  letter-spacing: 8rpx;
+  text-align: center;
+}
+
+.music-player-name-author .song-author {
+  font-size: 26rpx;
+  color: #aaa;
+  padding-top: 6rpx;
+  text-align: center;
+}
+
+/* <!-- 中间内容 --> */
+.music-player .center-image{
+  width: 400rpx;
+  margin: 200rpx auto 100rpx;
+}
+
+.center-image image{
+  width: 100%;
+  height: 400rpx;
+  border-radius: 50%;
+}
+
+/* 展示歌词页面 */
+.display-lyric {
+  height: 760rpx;
+  margin: 0 auto 100rpx;
+}
+
+.display-lyric .lyric-item {
+  text-align: center;
+  color: #fff;
+  /* margin-top: 10rpx; */
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+/* 活跃歌词 怎么选择活跃的第一个元素*/
+.display-lyric .is-active{
+  background-image: linear-gradient(to right, #fcc95b 0%, #76f8ff 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 36rpx;
+}
+
+/* <!-- 底部控件 -->
+<!-- 横向歌词 --> */
+.row-song-text {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  height: 160rpx;
+  /* line-height: 160rpx; */
+  font-size: 36rpx;
+  /* 文字渐变*/
+  background-image: linear-gradient(to right, #fcc95b 0%, #76f8ff 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+.music-player-bottom {
+  margin: 0 80rpx;
+}
+
+.music-player-bottom slider{
+  margin: 20rpx 0 10rpx;
+}
+
+.music-player-bottom .time {
+  color: #999;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.music-player-bottom .operate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.operate .music-change{
+  text-align: left;
+  width: 60rpx;
+  height: 60rpx;
+}
+.operate .music-pre{
+  width: 60rpx;
+  height: 60rpx;
+}
+.operate .music-next{
+  width: 60rpx;
+  height: 60rpx;
+}
+.operate .music-playing{
+  width: 120rpx;
+  height: 120rpx;
+}
+.operate .music-menu {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 展示播放列表 */
+/* .play-list .cover{
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, .3);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.play-list-bottom { 
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx 20rpx;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.play-list .play-list-wrapper {
+  height: 600rpx;
+  width: 100%;
+}
+
+.play-list-wrapper .play-list-item {
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.play-list-wrapper .play-active {
+  color: #f00;
+  font-weight: 600;
+}
+.play-list-item text {
+  color: #666;
+  font-size: 26rpx;
+  vertical-align: top;
+}
+.play-active text {
+  color: #f00;
+}
+ */

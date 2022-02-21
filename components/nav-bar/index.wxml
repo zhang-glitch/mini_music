@@ -1,0 +1,20 @@
+<view class="nav-bar">
+  <view class="nav" style="margin-top: {{statusBarHeight}}px;">
+    <view class="left" bindtap="handleTap">
+      <view class="nav-left-slot"><slot name="left"></slot></view>
+      <!-- 默认的左边插槽 -->
+      <view class="nav-left">
+        <image src="/assets/imgs/left-arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="center">
+      <view class="nav-center-slot"><slot name="center"></slot></view>
+      <!-- 默认中间插槽 -->
+      <view class="nav-center">{{text}}</view>
+    </view>
+    
+    <view class="right">
+      <view class="nav-right"><slot name="right"></slot></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,92 @@
+<wxs src="/utils/format.wxs" module="format"></wxs>
+<view class="music-player">
+  <!-- 页面背景 -->
+  <image class="bg-image" src="{{songDetail.al.picUrl}}"></image>
+  <view class="bg-cover"></view>
+  <!-- 页面导航 -->
+  <nav-bar bind:handleClick="handleBackBtn">
+    <view slot="center" class="music-player-name-author">
+      <view class="song-name">{{songDetail.name}}</view>
+      <view class="song-author">{{songDetail.ar[0].name}}</view>
+    </view>
+  </nav-bar>
+  <!-- 中间内容 -->
+  <view class="center-image" wx:if="{{!isShowLyric}}" bindtap="handleClickBg">
+    <image src="{{songDetail.al.picUrl}}"></image>
+  </view>
+  <!-- 显示歌词 
+  
+    enhanced 
+    bindscroll="handleDragging"
+    binddragend="handleDragend"
+  -->
+  <scroll-view 
+    class="display-lyric" 
+    wx:if="{{isShowLyric}}" 
+    bindtap="handleClickBg" 
+    scroll-y
+    scroll-top="{{scrollTop}}"
+    scroll-with-animation
+  >
+  <!-- 
+      class="lyric-item {{item.text === currentLyricText ? 'is-active' : ''}}"  -->
+    <view 
+      class="lyric-item {{index === currentLyricIndex ? 'is-active' : ''}}" 
+      wx:for="{{lyricArr}}" 
+      wx:key="index"
+      style="padding-top: {{index === 0 ? 400 : 0}}rpx; padding-bottom: {{index === lyricArr.length - 1 ? 200 : 0}}rpx;"
+      bindtap="handleClickLyricItem"
+      data-index="{{index}}"
+    >
+      {{item.text}}
+    </view>
+  </scroll-view>
+  <!-- 底部控件 -->
+  <!-- 横向歌词 -->
+  <view class="row-song-text" wx:if="{{!isShowLyric}}">{{currentLyricText}}</view>
+  <view class="music-player-bottom">
+    <slider 
+      color="#fff" 
+      value="{{sliderValue}}"
+      block-size="{{12}}"
+      activeColor="#f00"
+      bindchange="handleClick"
+      bindchanging="handleSlider"
+    ></slider>
+    <view class="time">
+      <view class="pre-time">{{format.formatPlayDuration(currentTime)}}</view>
+      <view class="last-time">{{format.formatPlayDuration(songDetail.dt)}}</view>
+    </view>
+    <view class="operate">
+      <image 
+        class="music-change"
+        src="{{playMode[modeIndex]}}"
+        bindtap="handleChangeMode"
+      ></image>
+      <image 
+        class="music-pre" 
+        src="/assets/imgs/pre-music.png"
+        bindtap="handlePrevMusic"
+      ></image>
+      <image 
+        class="music-playing" 
+        src="{{isPlaying ? '/assets/imgs/playing.png' : '/assets/imgs/pausing.png'}}"
+        bindtap="handlePlayBtn"
+      ></image>
+      <image 
+        class="music-next" 
+        src="/assets/imgs/next-music.png"
+        bindtap="handleNextMusic"
+      ></image>
+      <image 
+        class="music-menu" 
+        src="/assets/imgs/music-menu.png"
+        bindtap="handleShowMusicList"
+      ></image>
+    </view>
+  </view>
+  <!-- 展示播放列表 -->
+  <block wx:if="{{isShowMusicList}}">
+    <playing-music-list bind:handleClickCover="handleClickCover"></playing-music-list>
+  </block>
+</view>

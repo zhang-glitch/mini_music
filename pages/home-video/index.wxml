@@ -1,0 +1,6 @@
+<view class="page-video">
+  <view wx:for="{{topMvs}}" wx:key="id" class="video-item-wrapper">
+    <video-item item="{{item}}" bindtap="toVideoDetail" data-item="{{item}}"></video-item>
+  </view>
+</view>
+

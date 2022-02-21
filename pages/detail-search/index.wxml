@@ -1,0 +1,87 @@
+<view class="detail-search">
+  <van-search 
+    class="search"
+    background="#f7f7f7" 
+    shape="round" 
+    value="{{inputMessage}}"
+    bind:change="handleMessageChange"
+    bind:search="handleSearch"
+    bind:clear="handleClear"
+  ></van-search>
+  <!-- 展示搜索建议 --> 
+  <view class="search-container" style="display: {{(!ensureSearchMusicList.length && inputMessage && searchList.order ) ? 'block' : 'none'}};">
+  <!-- 歌曲 -->
+    <view class="search-song" wx:if="{{searchList.songs}}">
+      <view class="song-left">歌曲</view>
+      <view class="song-right">
+        <view 
+          class="song-item" 
+          wx:for="{{searchList.songs}}" 
+          wx:key="id"
+          bindtap="handleItem"
+          data-item="{{item}}"
+        >{{item.name}}-{{item.artists[0].name}}</view>
+      </view>
+    </view>
+    <!-- 歌手 -->
+    <view class="search-songer" wx:if="{{searchList.artists}}">
+      <view class="songer-left">歌手</view>
+      <view 
+        class="songer-right"
+        bindtap="handleItem"
+        data-item="{{searchList.artists[0]}}"
+      >{{searchList.artists[0].name}}</view>
+    </view>
+    <!-- 专辑 -->
+    <view class="search-album" wx:if="{{searchList.albums}}">
+      <view class="album-left">专辑</view>
+      <view class="album-right">
+        <view 
+          class="album-item" 
+          wx:for="{{searchList.albums}}"
+          wx:key="id"
+          bindtap="handleItem"
+          data-item="{{item}}"
+        >
+          {{item.name}}-{{item.artist.name}}
+        </view>
+      </view>
+    </view>
+    <!-- 歌单 -->
+    <view class="search-song-menu" wx:if="{{searchList.playlists}}">
+      <view class="song-menu-left">歌单</view>
+      <view class="song-menu-right">
+        <view 
+          class="song-menu-item" 
+          wx:for="{{searchList.playlists}}"
+          wx:key="id"
+          bindtap="handleItem"
+          data-item="{{item}}"
+        >{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 热门搜索 -->
+  <view class="hot-key-wrapper" wx:if="{{!ensureSearchMusicList.length}}">
+    <sub-header title="热门搜索" isShow="{{false}}"></sub-header>
+    <view class="hot-key-list">
+      <text wx:for="{{hotKeys}}" wx:key="first" bindtap="handleTagSearch" data-name="{{item.first}}">{{item.first}}</text>
+    </view>
+  </view>
+  <!-- 搜索结果 -->
+  <!-- <sub-header title="搜索结果" isShow="{{false}}" wx:if="{{isShowRank}}"></sub-header> -->
+  <view class="music-item-wrapper">
+    <!-- <view 
+      class="music-item" 
+      wx:for="{{ensureSearchMusicList}}"
+      wx:key="index"
+    >
+      <view class="number">{{index + 1}}</view>
+      <view class="music-item-info">
+        <view class="music-name">{{item.name}}</view>
+        <view class="author-desc">{{item.artists[0].name}} {{item.alias[0] ? "·" : ""}} {{item.alias[0]}}</view>
+      </view>
+    </view> -->
+    <music-list-item musicList="{{ensureSearchMusicList}}"></music-list-item>
+  </view>
+</view>

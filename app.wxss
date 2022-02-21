@@ -1,0 +1,12 @@
+page {
+  width: 100%;
+}
+
+.van-search__content {
+  background: #fff !important;
+}
+
+.van-search {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

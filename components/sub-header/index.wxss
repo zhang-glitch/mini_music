@@ -1,0 +1,28 @@
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+
+.sub-header .header-title {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+/* 如果为传入插槽,就展示默认插槽 */
+.right-header .slot:empty + .default-slot {
+  display: flex;
+  align-items: center;
+}
+
+.right-header .default-slot {
+  display: none;
+  color: #707070;
+  font-size: 34rpx
+}
+.default-slot .right-arrow {
+  width: 40rpx;
+  height: 40rpx;
+}

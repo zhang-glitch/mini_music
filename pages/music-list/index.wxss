@@ -1,0 +1,113 @@
+.music-list {
+  padding: 0 30rpx;
+}
+/* 歌单列表题头 */
+.menu-title {
+  position: relative;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 26rpx;
+}
+
+.menu-title .menu-title-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  left: -30rpx;
+  top: 0;
+}
+
+.cover {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  left: -30rpx;
+  top: 0;
+  background-color: rgba(0, 0, 0, .1);
+  backdrop-filter: blur(5px);
+}
+
+.menu-title .menu-title-top {
+  /* height: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-title-top .menu-title-image {
+  width:33%;
+  border-radius: 20rpx;
+}
+
+.menu-title-top .name-info {
+  width: 60%;
+}
+
+.name-info .name {
+  color: #fff;
+  font-size: 36rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  /* 这三个是必须的 */
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+.name-info .avatar-author {
+  display: flex;
+  /* margin: 16rpx 0 20rpx 0; */
+  margin-top: 16rpx;
+  align-items: center;
+}
+
+.avatar-author .avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.avatar-author .author {
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.name-info .desc {
+  color: #fff;
+  font-size: 26rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  /* 这三个是必须的 */
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  margin-top: 20rpx;
+}
+
+.menu-title-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-title-bottom {
+  color: #fff;
+}
+.menu-title-bottom image {
+  width: 50rpx;
+  vertical-align: middle;
+  margin-right: 12rpx;
+}
+.menu-title-bottom text {
+  vertical-align: middle;
+}

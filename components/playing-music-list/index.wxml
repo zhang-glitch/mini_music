@@ -1,0 +1,21 @@
+<view class="play-list">
+  <view class="cover" bindtap="handleClickCover"></view>
+  <view class="play-list-bottom">
+    <sub-header title="列表播放" isShow="{{false}}"></sub-header>
+    <scroll-view 
+      class="play-list-wrapper" 
+      scroll-y 
+      scroll-with-animation
+      style="height: {{playListHeight}}rpx;"
+    >
+      <view 
+      class="play-list-item {{index === currentMusicIndex ? 'play-active' : ''}}" 
+      wx:for="{{musicList}}" 
+      wx:key="index"
+      bindtap="handleMusicListItem"
+      data-id="{{item.id}}"
+      data-index="{{index}}"
+      >{{index + 1}}. {{item.name}} - <text>{{item.ar[0].name}}</text></view>
+    </scroll-view>
+  </view>
+</view>

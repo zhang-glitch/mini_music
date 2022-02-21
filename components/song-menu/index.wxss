@@ -1,0 +1,33 @@
+/* 歌曲歌单 */
+/* .song-menu-wrapper  */
+.song-menu {
+  white-space: nowrap;
+  width: 100vw;
+  position: relative;
+  left: -20rpx;
+}
+
+.song-menu .song-menu-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 220rpx;
+  margin-left: 20rpx;
+}
+
+.song-menu-item image {
+  width: 100%;
+  border-radius: 12rpx;
+}
+
+.song-menu-item .desc {
+  font-size: 25rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  /* 这三个是必须的 */
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}

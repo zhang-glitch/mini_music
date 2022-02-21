@@ -1,0 +1,6 @@
+<view class="music-menu">
+  <music-menu-item musicList="{{gufenMenuList}}"></music-menu-item>
+  <music-menu-item musicList="{{huayuMenuList}}"></music-menu-item>
+  <music-menu-item musicList="{{liuxingMenuList}}"></music-menu-item>
+  <music-menu-item musicList="{{oumeiMenuList}}"></music-menu-item>
+</view>

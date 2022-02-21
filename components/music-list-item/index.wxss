@@ -1,0 +1,45 @@
+.music-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.music-item .number {
+  width: 10%;
+}
+
+.music-item .music-item-info {
+  /* flex: 1; */
+  width: 90%;
+}
+
+.music-item-info .music-name {
+  font-weight: 600;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 16rpx;
+}
+
+.music-item-info .author-desc {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 26rpx;
+  color: #555;
+  overflow: hidden;
+  white-space:nowrap; 
+  text-overflow: ellipsis;
+}
+.music-item-info .author-desc::before {
+  content: "SQ";
+  display: inline-block;
+  border: 1px solid #eea245;
+  border-radius: 6rpx;
+  padding: 0 8rpx;
+  font-size: 16rpx;
+  margin-right: 10rpx;
+  color: #eea245;
+  vertical-align: middle;
+}

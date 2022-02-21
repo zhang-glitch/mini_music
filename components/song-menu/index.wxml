@@ -1,0 +1,17 @@
+<view class="song-menu-wrapper">
+  <sub-header title="{{subTitleText}}" bind:handleToMusicListPage="handleMoreMenu"></sub-header>
+  <scroll-view class="song-menu" scroll-x >
+    <view 
+      class="song-menu-item"
+      wx:for="{{songMenuList}}" 
+      wx:key="id"
+      bindtap="handleToMusicList"
+      data-item="{{item}}"
+    >
+      <image src="{{item.coverImgUrl}}" mode="widthFix"></image>
+      <view class="desc">{{item.description || item.name}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+

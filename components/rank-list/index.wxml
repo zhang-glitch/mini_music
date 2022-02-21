@@ -1,0 +1,19 @@
+<view 
+  class="rank-list"
+  style="margin-bottom:{{isPlaying ?  130 : 30}}rpx;"
+  >
+  <view class="rank-item">
+    <view class="item-left">
+      <view class="item-title">{{title}}</view>
+      <view 
+        class="item-info" 
+        wx:for="{{musicList}}" 
+        wx:key="id"
+      >{{index + 1}}. {{item.al.name}} - <text>{{item.ar[0].name}}</text></view>
+    </view>
+    <view class="item-right">
+      <image src="{{itemImageUrl}}" mode="widthFix"></image>
+      <view class="play-count">12.67亿</view>
+    </view>
+  </view>
+</view>

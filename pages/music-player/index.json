@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/index",
+    "sub-header": "/components/sub-header/index",
+    "playing-music-list": "/components/playing-music-list/index"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white"
+}

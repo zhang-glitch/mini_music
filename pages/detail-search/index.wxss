@@ -1,0 +1,176 @@
+page {
+  background: #f7f7f7;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.hot-key-wrapper {
+  margin-top: 100rpx;
+}
+
+.detail-search .hot-key-list {
+  width: 100%;
+}
+
+.search {
+  position: fixed;
+  left: 20rpx;
+  right: 20rpx;
+  top: 0;
+}
+
+.hot-key-list text{
+  display: inline-block;
+  padding: 0 20rpx 0 10rpx;
+  white-space: nowrap;
+  line-height: 70rpx;
+  height: 70rpx;
+}
+
+.hot-key-list text:first-child {
+  color: #d81e06;
+}
+
+/* 展示搜索建议 */
+.search-container {
+  width: 80%;
+  /* height: 600rpx; */
+  position: absolute;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+  background: #fff;
+  box-shadow: 0 1rpx 10rpx #181717;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 歌曲 */
+.search-container .search-song {
+  height: 240rpx;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #666;
+  border-right: 1rpx solid #666;
+}
+
+.search-song .song-left {
+  width: 25%;
+  height: 100%;
+  line-height: 240rpx;
+  text-align: center;
+  border-right: 1rpx solid #444;
+}
+
+.search-song .song-right {
+  width: 75%;
+}
+
+.song-right .song-item {
+  box-sizing: border-box;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 歌手 */
+.search-container .search-songer {
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search-songer .songer-left {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  border-right: 1rpx solid #444;
+}
+
+.search-songer .songer-right {
+  border-top: 1rpx solid #666;
+  border-bottom: 1rpx solid #666;
+  padding-left: 30rpx;
+  width: 75%;
+  box-sizing: border-box;
+  background: #f9f8f8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1rpx solid #666;
+}
+
+/* 专辑 */
+.search-container .search-album {
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search-album .album-left {
+  width: 25%;
+  height: 100%;
+  line-height: 120rpx;
+  text-align: center;
+  border-right: 1rpx solid #444;
+}
+
+.search-album .album-right {
+  width: 75%;
+  box-sizing: border-box;
+  border-right: 1rpx solid #666;
+}
+
+.album-right .album-item {
+  height: 60rpx;
+  padding-left: 30rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 歌单 */
+.search-container .search-song-menu {
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #666;
+}
+
+.search-song-menu .song-menu-left {
+  width: 25%;
+  height: 100%;
+  line-height: 120rpx;
+  text-align: center;
+  border-right: 1rpx solid #444;
+}
+
+.search-song-menu .song-menu-right {
+  border-top: 1rpx solid #666;
+  width: 75%;
+  box-sizing: border-box;
+  background: #f9f8f8;
+  border-right: 1rpx solid #666;
+}
+
+.song-menu-right .song-menu-item {
+  height: 60rpx;
+  padding-left: 30rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 展示搜索结果 */
+.music-item-wrapper { 
+  margin-top: 100rpx;
+}

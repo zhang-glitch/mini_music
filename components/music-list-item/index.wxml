@@ -1,0 +1,15 @@
+<view 
+  class="music-item" 
+  wx:for="{{musicList}}"
+  wx:key="index"
+  bindtap="handleToMusicPlayer"
+  data-id="{{item.id}}"
+  data-index="{{index}}"
+>
+  <view class="number">{{index + 1}}</view>
+  <view class="music-item-info">
+    <view class="music-name">{{item.name}}</view>
+    <view class="author-desc" wx:if="{{item.ar.length}}">{{item.ar[0].name}} {{item.alia[0] ? "·" : ""}} {{item.alia[0]}}</view>
+    <view class="author-desc" wx:if="{{item.artists.length}}">{{item.artists[0].name}} {{item.alias[0] ? "·" : ""}} {{item.alias[0]}}</view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/home-music/index",
+    "pages/home-video/index",
+    "pages/video-detail/index",
+    "pages/detail-search/index",
+    "pages/music-list/index",
+    "pages/music-menu/index",
+    "pages/music-player/index"
+  ],
+  "requiredBackgroundModes": ["audio"],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "昊淼音乐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#db331d",
+    "list": [
+      {
+        "pagePath": "pages/home-music/index",
+        "text": "音乐",
+        "iconPath": "assets/imgs/music-default.png",
+        "selectedIconPath": "assets/imgs/music-active.png"
+      },
+      {
+        "pagePath": "pages/home-video/index",
+        "text": "视频",
+        "iconPath": "assets/imgs/video-default.png",
+        "selectedIconPath": "assets/imgs/video-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

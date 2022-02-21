@@ -1,0 +1,128 @@
+page {
+  background: #fafafa;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.swiper {
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.swiper .swiper-image {
+  width: 100%;
+}
+
+/* .recomment-music .recomment-music-list {
+ 
+} */
+
+.recomment-music-list .recomment-music-item {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.recomment-music-item  .music-image {
+  width: 140rpx;
+  border-radius: 10rpx;
+}
+
+.recomment-music-item  .item-right {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  position: relative;
+}
+.item-right .music-title {
+  font-size: 34rpx;
+}
+
+.item-right .author-info {
+  font-size: 26rpx;
+  color: #a9a7a9;
+  position: absolute;
+  bottom: 16rpx;
+}
+.recomment-music-item  .right-arrow{
+  width: 38rpx;
+  height: 38rpx;
+  display: flex;
+  align-self: center;
+}
+
+/* 正在播放的音乐 */
+.playing-music {
+  height: 88rpx;
+  /* line-height: 88rpx; */
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, .2);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #f7f7f7;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.playing-music .playing-music-image-wrapper {
+  overflow: hidden;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  top: -16rpx;
+  padding-right: 20rpx;
+}
+
+.playing-music-image-wrapper image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transform-origin: center center;
+  animation: circleAnimation 16s linear infinite;
+}
+
+@keyframes circleAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.playing-music .playing-music-name {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.playing-music .operate {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.operate image {
+  display: block;
+  width: 38px;
+  height: 38px;
+}
+.operate .playing-pausing-btn {
+
+}
+
+.operate .playing-music-list {
+  width: 34px;
+  height: 34px;
+}
+
+/* 播放列表 */
+.play-music-list-wrapper {
+  width: 100vw;
+  position: relative;
+  left: -20rpx;
+}

@@ -1,0 +1,14 @@
+<view class="sub-header">
+  <view class="header-title">{{title}}</view>
+  <view class="right-header" wx:if="{{isShow}}">
+    <!-- 传入的内容展示 -->
+    <view class="slot">
+      <slot></slot>
+    </view>
+    <!-- 默认的内容展示 -->
+    <view class="default-slot" bindtap="handleToMusicListPage">
+      <text>更多</text>
+      <image class="right-arrow" src="/assets/imgs/right-arrow.png"></image>
+    </view>
+  </view>
+</view>

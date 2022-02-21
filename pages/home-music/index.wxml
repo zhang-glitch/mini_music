@@ -1,0 +1,118 @@
+<view class="home-music">
+<!-- 搜索框 -->
+  <van-search 
+    background="#fafafa" 
+    shape="round" 
+    placeholder="请搜索你喜欢的歌词"
+    disabled
+    bind:click-input="handleToSearch"
+  />
+  <!-- 轮播图 -->
+  <swiper 
+    class="swiper"
+    indicator-dots
+    indicator-active-color="#db331d"
+    style="height: {{swiperHeight}};"
+    circular
+  >
+      <swiper-item 
+        wx:for="{{bannerList}}" 
+        wx:key="bannerId"
+        >
+        <image 
+          class="swiper-image" 
+          src="{{item.pic}}" 
+          mode="widthFix"
+          bindload="handleSwiperImageLoaded"
+        ></image>
+      </swiper-item>
+  </swiper>
+  <!-- 推荐歌单 -->
+  <view class="recomment-music">
+    <sub-header title="推荐歌单" bind:handleToMusicListPage="handleMore" data-rankName="hotMusic"></sub-header>
+    <view class="recomment-music-list">
+      <view 
+        class="recomment-music-item"
+        wx:for="{{topMusicList}}"
+        wx:key="id"
+        bindtap="handleToMusicPlayer"
+        data-id="{{item.id}}"
+        data-index="{{index}}"
+      >
+        <image class="music-image" src="{{item.al.picUrl}}" mode="widthFix"></image>
+        <view class="item-right">
+          <view class="music-title">{{item.al.name}}</view>
+          <view class="author-info">{{item.ar[0].name}} · {{item.alia[0] || "匿名"}}</view>
+        </view>
+        <image class="right-arrow" src="/assets/imgs/right-arrow.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 热门歌单，横向滚动 -->
+  <song-menu 
+    songMenuList="{{hotSongList}}" 
+    subTitleText="热门歌单"
+  ></song-menu>
+  <song-menu 
+    songMenuList="{{recommentSongList}}" 
+    subTitleText="推荐歌单"
+  ></song-menu>
+  <!-- 巅峰榜 -->
+  <sub-header title="巅峰榜" isShow="{{false}}"></sub-header>
+  <rank-list 
+    musicList="{{newMusicList}}" 
+    itemImageUrl="/assets/imgs/newMusic.jpg" 
+    title="新歌榜"
+    bindtap="handleToMusicList"
+    data-rankName="newMusic"
+  ></rank-list>
+  <rank-list 
+    musicList="{{originalMusicList}}" 
+    itemImageUrl="/assets/imgs/originalMusic.jpg" 
+    title="原创榜"
+    bindtap="handleToMusicList"
+    data-rankName="originalMusic"
+  ></rank-list>
+  <rank-list 
+    musicList="{{upMusicList}}" 
+    itemImageUrl="/assets/imgs/upMusic.jpg" 
+    title="飙升榜"
+    bindtap="handleToMusicList"
+    data-rankName="upMusic"
+    isPlaying="{{currentMusicDetail.id ? true : false}}"
+  ></rank-list>
+  <!-- 正在播放的歌曲 -->
+  <view 
+    class="playing-music" 
+    wx:if="{{currentMusicDetail.id}}" 
+    bindtap="handleCurrentPlayingMusic"
+    data-id="{{currentMusicDetail.id}}"
+  >
+    <view class="playing-music-image-wrapper">
+      <image 
+        class="playing-music-image" 
+        src="{{currentMusicDetail.al.picUrl}}" 
+        mode="aspectFill"
+        style="animation-play-state: {{isPlaying ? 'running' : 'paused'}};"
+      ></image>
+    </view>
+    <view class="playing-music-name">{{currentMusicDetail.name}} - {{currentMusicDetail.ar[0].name}}</view>
+    <view class="operate">
+      <image 
+        class="playing-pausing-btn"
+        src="{{isPlaying ? '/assets/imgs/current-music-playing.png' : '/assets/imgs/current-music-pausing.png'}}"
+        catchtap="handlePlayingMusicItem"
+        ></image>
+      <image 
+        class="playing-music-list"
+        src="/assets/imgs/current-music-list.png"
+        catchtap="handleShowMusicList"
+      ></image>
+    </view>
+  </view>
+  
+  <!-- 展示播放列表 -->
+  <view wx:if="{{isShowMusicList}}" class="play-music-list-wrapper">
+    <playing-music-list bind:handleClickCover="handleClickCover"></playing-music-list>
+  </view>
+</view>
